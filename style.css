@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+:root{
+    --color-roxo: #3a2e62;
+    --color-roxoC: #8669e7;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -7,14 +12,14 @@
 }
 
 body{
-    background-color: #8669e7;
+    background-color: var(--color-roxoC);
     color: #fff;
     font-family: "Roboto", sans-serif;
 }
 
 header{
     padding: 30px;
-    background-color: #3a2e62;
+    background-color: var(--color-roxo);
 }
 
 .links{
@@ -30,7 +35,7 @@ header{
 }
 
 #footer.links a:hover{
-    color: #3a2e62;
+    color: var(--color-roxo);
     transition: color 400ms;
 }
 
@@ -41,7 +46,7 @@ header{
 
 #wrapper img{
     border-radius: 50%;
-    border: 5px solid #3a2e62;
+    border: 5px solid var(--color-roxo);
     height: 250px;
     margin-bottom: 20px;
 }
@@ -67,4 +72,92 @@ ul{
 li:nth-child(1){
     font-weight: bold;
     margin-bottom: 10px;
+}
+
+/*Cursos*/
+
+.cursos{
+    max-width: 900px;
+    margin: 0 auto 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.curso{
+    background-color: #00000050;
+    text-align: center;
+    border-radius: 50px 0;
+}
+
+.curso-img img{
+    padding: 15px;
+}
+
+.curso-container,
+.curso-info{
+    padding: 14px;
+}
+
+.curso-price{
+    border-top: 2px solid var(--color-roxoC);
+}
+
+.curso-price p{
+    margin-top: 25px;
+}
+
+/*Modal*/
+
+.modal-overlay{
+    background-color: #00000070;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal{
+    background-color: #ffffff;
+    width: 90%;
+    height: 90%;
+    margin: 5vh auto;
+    position: relative;
+}
+
+.modal .close-modal{
+    color: black;
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    cursor: pointer;
+}
+
+.modal .maximize-modal{
+    color: black;
+    position: absolute;
+    right: 2%;
+    top: 15px;
+    cursor: pointer;
+}
+
+.modal-overlay.active{
+    opacity: 1;
+    visibility: visible;
+ }
+
+.modal.maximize{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+iframe{
+    width: 100%;
+    height: 95%;
+    position: absolute;
+    top: 5%;
+    border: none;
 }

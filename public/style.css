@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-:root{
+:root{ 
     --color-roxo: #3a2e62;
     --color-roxoC: #8669e7;
 }
@@ -160,4 +160,8 @@ iframe{
     position: absolute;
     top: 5%;
     border: none;
+}
+
+.rocket_404{
+    margin: 25px auto 25px;
 }

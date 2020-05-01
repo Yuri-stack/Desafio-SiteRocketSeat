@@ -1,8 +1,9 @@
 const express = require("express")      //importando a biblioteca do express
 const nunjucks = require("nunjucks")    //importando a biblioteca do nunjucks
 
-const server = express()                //a const server instancia o express
-const cursos = require('./data')        //importando o arquivo data
+const server = express()                        //a const server instancia o express
+const cursos = require('./data/data_courses')   //importando o arquivo com os dados dos cursos
+const links = require('./data/data_links')      //importando o arquivo com os dados das redes sociais
 
 server.use(express.static("public"))    //o express irá observar a pasta Public para servir os arq. estáticos (CSS)
 
@@ -29,11 +30,12 @@ server.get("/", function(req, res){     //request(req) é o que o usuário escre
         ]
     }
 
-    return res.render("about", {about: about})          //render indica qual é a view que será renderizada
+    return res.render("about", {about: about, links})          //render indica qual é a view que será renderizada
 })
 
 server.get("/courses", function(req, res){
-    return res.render("courses", {items: cursos})       //enviando o arquivo de dados para o portifolio dentro da variavel items
+
+    return res.render("courses", {items: cursos, links})       //enviando o arquivo de dados para o portifolio dentro da variavel items
 })
 
 server.use(function(req, res) {

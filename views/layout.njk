@@ -26,9 +26,9 @@
         {% endblock %}
 
         <div id="footer" class="links">
-            <a href="https://github.com/Rocketseat/" target="_blank">Github</a>
-            <a href="https://www.instagram.com/rocketseat_oficial/" target="_blank">Instagram</a>
-            <a href="https://www.facebook.com/rocketseat" target="_blank">Facebook</a>
+            {% for link in links %}
+                <a href="{{ link.url }}" target="_blank">{{ link.name }}</a>
+            {% endfor %}
         </div>
 
     </body>

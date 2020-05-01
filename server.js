@@ -2,21 +2,38 @@ const express = require("express")      //importando a biblioteca do express
 const nunjucks = require("nunjucks")    //importando a biblioteca do nunjucks
 
 const server = express()                //a const server instancia o express
+const cursos = require('./data')        //importando o arquivo data
 
 server.use(express.static("public"))    //o express irá observar a pasta Public para servir os arq. estáticos (CSS)
 
 server.set("view engine", "njk")       //setar qual é o motor de views da app, qual é a extensão dos arquivos para abrir 
 
 nunjucks.configure('views', {
-    express:server                      //indica ao nunjucks que vamos usar o Express com a var Server                      
+    express: server,                    //indica ao nunjucks que vamos usar o Express com a var Server
+    autoescape: false,                  //impede que o nunjucks mostre o codigo html em variaveis
+    noCache: true                       //bloqueando o cache do nunjucks                         
 })
 
 server.get("/", function(req, res){     //request(req) é o que o usuário escreve e response(res) é a resposta da app
-    return res.render("about")          //render indica qual é a view que será renderizada
+    const about = {
+        logo_url: "https://pbs.twimg.com/profile_images/953595371875422210/0pWsfSSp_400x400.jpg",
+        company: "Rocketseat",
+        description: "Mais do que uma plataforma de educação em tecnologia, uma comunidade incrível de programadores em busca do próximo nível",
+        techs: [
+            {name: "Nossas principais tecnologias"},
+            {name: "Javascript"},
+            {name: "Javascript ES6+"},
+            {name: "NodeJS"},
+            {name: "ReactJS"},
+            {name: "React Native"}            
+        ]
+    }
+
+    return res.render("about", {about: about})          //render indica qual é a view que será renderizada
 })
 
 server.get("/courses", function(req, res){
-    return res.render("courses")       //render indica qual é a view que será renderizada
+    return res.render("courses", {items: cursos})       //enviando o arquivo de dados para o portifolio dentro da variavel items
 })
 
 server.use(function(req, res) {

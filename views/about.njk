@@ -7,17 +7,14 @@
     {% block container %}
 
         <div id="wrapper">
-            <img src="https://pbs.twimg.com/profile_images/953595371875422210/0pWsfSSp_400x400.jpg" alt="Logo da Empresa Rocketseat">
-            <h1>Rocketseat</h1>
-            <p>Mais do que uma plataforma de educação em tecnologia, uma comunidade incrível de programadores em busca do próximo nível </p>
+            <img src="{{ about.logo_url }}" alt="Logo da Empresa {{ about.company }}">
+            <h1>{{ about.company }}</h1>
+            <p>{{ about.description }}</p>
 
             <ul>
-                <li>Nossas principais tecnologias</li>
-                <li>Javascript</li>
-                <li>Javascript ES6+</li>
-                <li>NodeJS</li>
-                <li>ReactJS</li>
-                <li>React Native</li>
+                {% for tech in about.techs %}
+                    <li>{{ tech.name }}</li>
+                {% endfor%}
             </ul>
 
         </div>

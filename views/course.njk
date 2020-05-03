@@ -1,0 +1,30 @@
+{% extends "layout.njk" %}
+
+    {% block head %}
+        <title>Rocketseat - {{ item.title }}</title>
+    {% endblock %}
+
+    {% block container %}
+
+        <section class="unique_course">
+
+            <div class="u_course" id="{{ item.id }}">
+                <div class="u_course-img">
+                    <img src="{{ item.img_url }}" alt="{{ item.title }}">
+                </div>
+
+                <div class="u_course-info">
+                    <p>{{ item.description }}</p>
+                    <hr>
+                    <p class="u_course-price"> {{ item.price }} </p>
+                    <hr>
+                    <p><a href="{{item.url_course}}" target="_blank">Confere lá!</a></p>
+                </div>
+            </div>
+
+        </section>
+
+
+    {% endblock %}
+
+</html>

@@ -7,7 +7,7 @@
 
     {% block container %}
 
-        <div id="wrapper">
+        <div id="wrapper"> 
             <h1>Conteúdos</h1>           
         </div>
 
@@ -26,6 +26,9 @@
 
                 <div class="curso-info">
                     <p>{{ item.modules }} Módulos</p>
+
+                    <hr class="row">
+                    
                     <p class="curso-price"> {{ item.price }} </p>
                 </div>
             </div>
@@ -34,7 +37,7 @@
 
         </section>
 
-        <div class="modal-overlay">
+        {# <div class="modal-overlay">
 
             <div class="modal">
                 <a class="close-modal">
@@ -51,7 +54,7 @@
                 </div>
             </div>
 
-        </div> 
+        </div>  #}
 
         <script src="scripts.js"></script>
 

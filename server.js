@@ -47,7 +47,6 @@ server.get("/courses/:id", function(req,res){           //passando o id do curso
         return res.render("not-found")
     }
 
-    // return res.send(`O id fornecido na rota é: ${id}`)
     return res.render("course", { item: course })
 
 })

@@ -18,10 +18,10 @@
   },
   "homepage": "https://github.com/Yuri-stack/DesafioEtapa2_Site#readme",
   "dependencies": {
-    "express": "^4.17.1",
-    "nunjucks": "^3.2.1"
+    "express": "^4.21.2",
+    "nunjucks": "^3.2.4"
   },
   "devDependencies": {
-    "nodemon": "^2.0.3"
+    "nodemon": "^3.1.10"
   }
 }
